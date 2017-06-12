@@ -2,23 +2,29 @@
   "name": "0611",
   "version": "1.0.0",
   "description": "this is a project",
-  "main": "index.js",
+  "main": "app.js",
+  "dependencies": {
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.0.0",
+    "vue": "^2.3.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "liuze",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.3",
-    "element-ui": "^1.3.6",
-    "express": "^4.15.3",
-    "mysql": "^2.13.0",
-    "sequelize": "^3.0.0"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/liuzeaa.git"
+    "url": "git+https://github.com/liuzeaa/chat.git"
   },
+  "keywords": [
+    "vue"
+  ],
+  "author": "liuzeaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liuzeaa/chat/issues"
+  },
+  "homepage": "https://github.com/liuzeaa/chat#readme"
 }
