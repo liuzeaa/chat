@@ -33,7 +33,7 @@ const Reply =sequelize.define('reply',{
     content:Sequelize.STRING
 })
 Reply.belongsTo(Comment)
-
+/*sequelize.sync();*/
 module.exports = {
     User,
     Post,
