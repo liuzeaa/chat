@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="769d3e11-5eba-46fa-86b2-0a50325aa766" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/0611.iml" afterPath="$PROJECT_DIR$/.idea/0611.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/comment/index.js" afterPath="$PROJECT_DIR$/apps/comment/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apps/post/index.js" afterPath="$PROJECT_DIR$/apps/post/index.js" />
     </list>
     <ignored path="0611.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,8 +45,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="lizueaa" />
         <option value="liuzeaa" />
+        <option value="lizueaa" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -322,6 +317,13 @@
       <workItem from="1497274398071" duration="3043000" />
       <workItem from="1497277831595" duration="5455000" />
     </task>
+    <task id="LOCAL-00001" summary="7">
+      <created>1497322263384</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1497322263384</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
