@@ -4,7 +4,7 @@
 
 var model = require('../../config/model')
 
-const COMMENT = model.User
+const COMMENT = model.Comment
 const connect = model.connect
 var express = require('express')
 var router =  express.Router();
