@@ -29,7 +29,7 @@ router.get('/detail',function(req,res){
             console.log(results.length)
             var json = []
             for(var i=0;i<results.length;i++){
-               /* var obj = results.dataValues
+               var obj = results.dataValues
                 obj.user = {}
                 obj.user.username = obj.username
                 obj.user.nicjname = obj.nickname
@@ -39,7 +39,7 @@ router.get('/detail',function(req,res){
                 delete  obj.nickname
                 delete obj.userId
                 delete obj.logo
-                json.push(obj)*/
+                json.push(obj)
 
             }
             res.send(json)
