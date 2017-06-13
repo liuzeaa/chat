@@ -4,7 +4,7 @@
 
 var model = require('../../config/model')
 
-const POST = model.Post
+const POST = model.User
 const connect = model.connect
 var express = require('express')
 var router =  express.Router();
@@ -27,9 +27,10 @@ router.get('/detail',function(req,res){
         .then(function(results){
             console.log(results)
             console.log(results.length)
+            console.log(results)
             var json = []
             for(var i=0;i<results.length;i++){
-               /* var obj = results.dataValues
+                var obj = results.dataValues
                 obj.user = {}
                 obj.user.username = obj.username
                 obj.user.nicjname = obj.nickname
@@ -39,7 +40,7 @@ router.get('/detail',function(req,res){
                 delete  obj.nickname
                 delete obj.userId
                 delete obj.logo
-                json.push(obj)*/
+                json.push(obj)
 
             }
             res.send(json)

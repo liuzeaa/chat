@@ -48,8 +48,8 @@ height:100%;width:100%;
     height:100%;
   }
 .el-menu{
-  height:100%;overflow-y: scroll;}
+  height:100%;overflow-y: auto;}
   .el-col-md-20{
-    height:100%;overflow-y: scroll;box-sizing: border-box;padding-left: 20px;
+    height:100%;overflow-y: auto;box-sizing: border-box;padding-left: 20px;
   }
 </style>
