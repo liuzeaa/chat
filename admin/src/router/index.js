@@ -6,15 +6,20 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/user',
-      name: '用户',
-      component: user
-    },
-    {
-      path: '/post',
-      name: '说说',
-      component: post
+    { path: '/', component: user,
+      children: [
+        {
+            path: '/user',
+            name: '用户',
+            component: user
+          },
+        {
+          path: '/post',
+          name: '说说',
+          component: post
+        }
+      ]
     }
+
   ]
 })

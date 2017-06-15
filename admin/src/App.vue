@@ -4,7 +4,7 @@
       <el-col :md="4">
         <el-menu>
           <el-menu-item
-            v-for="route in $router.options.routes"
+            v-for="route in $router.options.routes[0].children"
             :index="route.path"
             @click="click(route.path)"
           >
@@ -13,7 +13,7 @@
         </el-menu>
       </el-col>
       <el-col :md="20">
-        <router-view></router-view>
+        <router-view ></router-view>
       </el-col>
     </el-row>
 
@@ -30,7 +30,7 @@ export default {
       }
   },
   mounted(){
-      console.log(this.$router.options.routes)
+      console.log(this.$router.options.routes[0].children)
   }
 }
 </script>

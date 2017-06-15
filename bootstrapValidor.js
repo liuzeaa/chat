@@ -1,16 +1,15 @@
 /**
  * Created by liuze on 2017/6/13.
  */
-
-//   /^(?![a-zA-Z_]+$)(?![\da-z_+$])(?![\dA-Z_]+$])\w+/ 密码正则表达式
+//   /^(?![a-zA-Z_]+$)(?![\da-z_+$])(?![\dA-Z_]+$])\w+/ 密码正则表达式  必须包含大小写和下划线
 (function(root,factory,plug){
-    factory.call(root,root.jQuery,plug)
+    factory.call(root,root.jQuery,plug);
 })(this,function($,plug){
     var __DEFAULT__ = {
         Event:'change',
         message:"has error",
         showMessage:function($field,message){
-            $field.after("<p class='text-danger'>"+message+"</p>")
+            $field.after("<p class='text-danger'>"+message+"</p>");
         }
     }
     var __RULES__ = {
