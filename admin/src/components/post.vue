@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <el-table :data="list">
+    <el-table :data="list"  style="width: 100%">
       <el-table-column
         prop="id"
         label="id"
@@ -19,7 +19,7 @@
       <el-table-column
         prop="userId"
         label="作者id"
-        width="180">
+      >
       </el-table-column>
 
 

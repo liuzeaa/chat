@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <el-row>
+    <el-row :gutter="20">
       <el-col :md="4">
         <el-menu>
           <el-menu-item
-            v-for="route in $router.options.routes[0].children"
+            v-for="route in $router.options.routes"
+            v-if="!route.hidden"
             :index="route.path"
             @click="click(route.path)"
           >
@@ -30,16 +31,16 @@ export default {
       }
   },
   mounted(){
-      console.log(this.$router.options.routes[0].children)
+      console.log(this.$router.options.routes)
   }
 }
 </script>
 
 <style>
   *{padding:0;margin:0;}
+
 #app {
 height:100%;width:100%;
-  position: fixed;
 }
   .el-row{
     height:100%;
@@ -49,7 +50,4 @@ height:100%;width:100%;
   }
 .el-menu{
   height:100%;overflow-y: auto;}
-  .el-col-md-20{
-    height:100%;overflow-y: auto;box-sizing: border-box;padding-left: 20px;
-  }
 </style>
