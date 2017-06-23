@@ -17,3 +17,12 @@ export function addPost(id,obj,cb) {
           cb(res.body)
       })
 }
+
+export function delPost(id,obj,cb){
+  request
+    .post(host+'user/'+id+'/del')
+    .send(obj)
+    .end((err,res)=>{
+      cb(res.body)
+    })
+}

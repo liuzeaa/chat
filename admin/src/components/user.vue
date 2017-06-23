@@ -38,7 +38,7 @@
 <script>
   import {get_all_user} from './user.api'
 export default {
-  name: 'hello',
+  name: 'user',
   data () {
     return {
       list:[]

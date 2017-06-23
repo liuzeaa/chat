@@ -83,6 +83,7 @@ router.post('/:id/post',(req,res)=>{
         res.send(item)
     })
 })
+
 router.post('/:id/friend',(req,res)=>{
     connect.query(
         'INSERT INTO relations (createdAt, updatedAt, userId, friendId) VALUES (NOW(),NOW(),?,?)',
@@ -91,7 +92,15 @@ router.post('/:id/friend',(req,res)=>{
         res.send(item)
     })
 })
-
+router.post('/:id/del',(req,res)=>{
+    connect.query(
+        'DELETE FROM posts WHERE userId = ? AND id = ?',{
+            model:model.Post,replacements:[req.params.id,req.body.id]
+        }.then((item)=>{
+            res.send(item)
+        })
+    )
+})
 
 
 

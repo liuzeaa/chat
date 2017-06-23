@@ -30,7 +30,7 @@
 <script>
   import {get_all_post} from './post.api'
   export default {
-    name: 'hello',
+    name: 'post',
     data () {
       return {
         list:[]

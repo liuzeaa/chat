@@ -9,16 +9,17 @@
         </el-form-item>
       <!--toto 编辑文章-->
         <el-form-item>
-          <el-button >编辑文章</el-button>
+          <el-button @click="handleEditPost">编辑文章</el-button>
         </el-form-item>
       <!--toto 删除文章-->
       <el-form-item>
-        <el-button type="danger">删除文章</el-button>
+        <el-button type="danger" @click="handleDelPost">删除文章</el-button>
       </el-form-item>
     </el-form>
     <el-dialog
       title="增加文章"
       :visible="addPost.visible"
+      :before-close="handleClose"
     >
       <el-form>
          <el-form-item  label="标题" label-width="50px">
@@ -33,7 +34,7 @@
         <el-button type="primary" @click="handleAddPost">确 定</el-button>
       </span>
     </el-dialog>
-    <el-table :data="post" border>
+    <el-table :data="post" border @selection-change="tableSelectionChange">
       <el-table-column
         type="selection"
         width="55">
@@ -72,7 +73,7 @@
   </div>
 </template>
 <script>
-  import {detail,addPost} from './user.item.api'
+  import {detail,addPost,editorPost,delPost} from './user.item.api'
   import {get_all_user} from './user.api'
   export default {
       name:'user-item',
@@ -95,7 +96,8 @@
               updatedAt:'',
               post:[],
               friend:[],
-              allUser:[]
+              allUser:[],
+              selections:[]
           }
       },
       methods:{
@@ -120,6 +122,44 @@
               return !!this.friend.find((user)=>{
                   return user.id == id
               })
+          },
+          handleClose(){
+            this.addPost.visible = false
+          },
+         tableSelectionChange(val){
+            this.selections = val;
+         },
+          handleEditPost(){
+
+
+          },
+          handleDelPost(){
+          console.log(1)
+            if(this.selections.length>0){
+               this.$confirm('此操作将永久删除 ' + this.selections.length + '篇文章, 是否继续?', '提示', { type: 'warning' })
+                .then(() => {
+                    var ids = [];
+                    this.selections.map((item,i)=>{
+                      ids.push(item.id);
+                    })
+                    console.log(ids);
+                    var that = this;
+                    ids.forEach((item)=>{
+                      delPost(this.id,{id:item},function(item){
+                        that.post.splice(item,1);
+                      })
+                    })
+
+
+                })
+                .catch(() => {
+                    this.$message({
+                      type: 'info',
+                      message: '已取消删除'
+                    });
+                  });
+
+              }
           }
       },
       mounted(){

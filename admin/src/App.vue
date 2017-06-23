@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-row :gutter="20">
+    <el-row>
       <el-col :md="4">
         <el-menu>
           <el-menu-item
@@ -13,7 +13,7 @@
           </el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :md="20">
+      <el-col :md="19" :push="1">
         <router-view ></router-view>
       </el-col>
     </el-row>
