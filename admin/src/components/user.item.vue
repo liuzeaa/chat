@@ -192,7 +192,8 @@
           },
           handleAddFriend(){
             addFriend(this.id,this.addFriend.friendId,(item)=>{
-              location.reload();
+              debugger;
+              this.friend.push(item)
             })
           },
           handleDeleteFriend(friendId){

@@ -4,6 +4,7 @@ import userItem from '../components/user.item.vue'
 import message from '../components/message.vue'
 import user from '../components/user.vue'
 import post from '../components/post.vue'
+import postItem from '../components/post.item.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +24,12 @@ export default new Router({
       path: '/post',
       name: '说说',
       component: post
+    },
+    {
+      path: '/post/:id',
+      name: '说说项',
+      component: postItem,
+      hidden:true
     },
     {
       path: '/message',

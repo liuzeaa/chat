@@ -4,17 +4,22 @@
       <el-table-column
         prop="id"
         label="id"
-        width="180">
+      >
+        <template scope="scope">
+          <router-link :to=" 'post/'+scope.row.id">{{scope.row.id}}</router-link>
+        </template>
       </el-table-column>
       <el-table-column
         prop="title"
         label="标题"
-        width="180">
+      >
+        <template scope="scope">
+          <router-link :to=" 'post/'+scope.row.id">{{scope.row.title}}</router-link>
+        </template>
       </el-table-column>
       <el-table-column
         prop="content"
-        label="内容"
-        width="180">
+        label="内容">
       </el-table-column>
       <el-table-column
         prop="userId"

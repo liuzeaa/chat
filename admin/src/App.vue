@@ -2,7 +2,7 @@
   <div id="app">
     <el-row>
       <el-col :md="4">
-        <el-menu>
+        <el-menu style="overflow:auto">
           <el-menu-item
             v-for="route in $router.options.routes"
             v-if="!route.hidden"
@@ -13,7 +13,7 @@
           </el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :md="19" :push="1">
+      <el-col :md="20" style="padding:0px 20px;overflow:auto">
         <router-view ></router-view>
       </el-col>
     </el-row>
@@ -32,6 +32,9 @@ export default {
   },
   mounted(){
       console.log(this.$router.options.routes)
+      var app = document.querySelector('#app');
+      var winHeight = window.innerHeight?window.innerHeight:((document.body) && (document.body.clientHeight)?document.body.clientHeight:'');
+      app.style.height = winHeight +'px'
   }
 }
 </script>
@@ -40,7 +43,7 @@ export default {
   *{padding:0;margin:0;}
 
 #app {
-height:100%;width:100%;
+  width:100%;height:100%;
 }
   .el-row{
     height:100%;

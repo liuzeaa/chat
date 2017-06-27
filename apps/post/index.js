@@ -49,5 +49,7 @@ router.get('/detail',function (req,res) {
             res.send(json)
         })
 })
-
+/*router.get('/:id',(req,res)=>{
+    res.send('hello')
+})*/
 module.exports = router

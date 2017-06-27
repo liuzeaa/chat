@@ -6,3 +6,4 @@ yarn-debug.log*
 yarn-error.log*
 .idea/
 admin/node_modules/
+/npm-debug.log.2211088188
