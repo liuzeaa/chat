@@ -1,1 +1,0 @@
-UPDATE dongnao_liaotian.stars SET createdAt = '2017-06-13 20:01:15', updatedAt = '2017-06-13 20:01:16', userId = 1, postId = 2 WHERE id = 1;

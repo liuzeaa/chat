@@ -1,2 +1,0 @@
-UPDATE dongnao_liaotian.posts SET title = 'fdsf ', content = 'fsdfd', image = null, createdAt = '2017-06-27 13:15:15', updatedAt = '2017-06-27 13:38:16', userId = 1 WHERE id = 2;
-UPDATE dongnao_liaotian.posts SET title = 'fasf ', content = 'fsdfddd ', image = null, createdAt = '2017-06-27 13:17:31', updatedAt = '2017-06-27 13:17:31', userId = 1 WHERE id = 3;

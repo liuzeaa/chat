@@ -1,1 +1,0 @@
-UPDATE dongnao_liaotian.comments SET content = '方法吧', createdAt = '2017-06-27 22:18:44', updatedAt = '2017-06-27 22:18:45', userId = 1, postId = 2 WHERE id = 1;
