@@ -194,7 +194,10 @@
             addFriend(this.id,this.addFriend.friendId,(item)=>{
               queryUser(this.addFriend.friendId,(i)=>{
                 this.friend.push(i)
+
               })
+              this.addFriend.visible = false
+              this.friendId = ''
             })
           },
           handleDeleteFriend(friendId){

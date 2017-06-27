@@ -24,8 +24,8 @@ import {detail} from './post.item.api'
         data(){
             return{
                id:"-1",
-              title:'',
-              content:'',
+                title:'',
+                content:'',
                 stars:[],
                 comments:[]
             }
@@ -35,7 +35,7 @@ import {detail} from './post.item.api'
             detail(this.id,(item)=>{
                 this.title=  item.title
                 this.content = item.content
-                this.comments  =item.comment
+                this.comments  =item.comments
                 this.stars = item.stars
             })
           }
