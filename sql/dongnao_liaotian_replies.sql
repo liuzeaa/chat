@@ -1,0 +1,1 @@
+UPDATE dongnao_liaotian.replies SET content = 'sfaws', createdAt = '2017-06-13 20:00:59', updatedAt = '2017-06-13 20:01:00', commentId = null WHERE id = 1;

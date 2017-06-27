@@ -1,0 +1,3 @@
+UPDATE dongnao_liaotian.users SET username = 'liuze', nickname = 'liuze', password = '12345', logo = '', createdAt = '2017-06-12 22:59:54', updatedAt = '2017-06-12 22:59:57' WHERE id = 1;
+UPDATE dongnao_liaotian.users SET username = 'liuzeaa', nickname = 'liuzeaa', password = '123456', logo = null, createdAt = '2017-06-19 21:00:39', updatedAt = '2017-06-19 21:00:41' WHERE id = 2;
+UPDATE dongnao_liaotian.users SET username = '2', nickname = '2', password = '12321', logo = null, createdAt = '2017-06-27 21:15:47', updatedAt = '2017-06-27 21:15:49' WHERE id = 3;
