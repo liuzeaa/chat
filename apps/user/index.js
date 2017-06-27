@@ -83,24 +83,51 @@ router.post('/:id/post',(req,res)=>{
         res.send(item)
     })
 })
+router.patch('/:userId/post/:postId',(req,res)=>{
+    model
+        .Post.findById(req.params.postId)
+        .then(post=>{
+            post.update(req.body)
+            .then((item)=>{
+                res.send(item)
+            })
+        })
+})
+router.delete('/:userId/post/:postId',(req,res)=>{
+    model
+        .Post.findById(req.params.postId)
+        .then(post=>{
+             post.destroy()
+            .then((item)=>{
+                res.send(item)
+            })
+        })
 
-router.post('/:id/friend',(req,res)=>{
+})
+router.post('/:userId/friend/:friendId',(req,res)=>{
     connect.query(
         'INSERT INTO relations (createdAt, updatedAt, userId, friendId) VALUES (NOW(),NOW(),?,?)',
-        {model:model.Relation,replacements:[req.params.id,req.body.friendId]}
+        {replacements:[req.params.userId,req.params.friendId]}
     ).then((item)=>{
         res.send(item)
     })
 })
-router.post('/:id/del',(req,res)=>{
-    connect.query(
-        'DELETE FROM posts WHERE userId = ? AND id = ?',{
-            model:model.Post,replacements:[req.params.id,req.body.id]
-        }.then((item)=>{
-            res.send(item)
-        })
-    )
+router.delete('/:userId/friend/:friendId',(req,res)=>{
+   model.Relation.findOne({
+       where:{
+           $or:[
+               {userId:req.params.userId,friendId:req.params.friendId},
+               {friendId:req.params.userId,userId:req.params.friendId}
+           ]
+       }
+   }).then((friend)=>{
+       friend.destroy()
+           .then((item)=>{
+               res.send(item)
+           })
+   })
 })
+
 
 
 

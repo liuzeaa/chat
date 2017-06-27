@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import userItem from '../components/user.item.vue'
+import message from '../components/message.vue'
 import user from '../components/user.vue'
 import post from '../components/post.vue'
 Vue.use(Router)
@@ -24,9 +25,9 @@ export default new Router({
       component: post
     },
     {
-      path: '/post/:id',
-      name: '说说项',
-      component: post,
+      path: '/message',
+      name: '聊天记录',
+      component: message,
       hidden:true
     }
   ]
