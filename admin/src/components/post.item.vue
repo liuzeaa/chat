@@ -1,5 +1,7 @@
 <template>
     <div class="postitem">
+      <h2>{{title}}</h2>
+      <p>{{content}}</p>
         <h3>评论</h3>
         <el-table :data="comments">
           <el-table-column label="id" prop="id"></el-table-column>
@@ -22,6 +24,8 @@ import {detail} from './post.item.api'
         data(){
             return{
                id:"-1",
+              title:'',
+              content:'',
                 stars:[],
                 comments:[]
             }
@@ -29,6 +33,8 @@ import {detail} from './post.item.api'
         methods:{
           fetch(){
             detail(this.id,(item)=>{
+                this.title=  item.title
+                this.content = item.content
                 this.comments  =item.comment
                 this.stars = item.stars
             })
