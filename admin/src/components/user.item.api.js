@@ -8,7 +8,13 @@ export function detail(id, cb) {
           cb(res.body)
       })
 }
-
+export function queryUser(id,cb){
+  request
+    .get(host+'user/'+id)
+    .end((err,res)=>{
+      cb(res.body)
+    })
+}
 export function addPost(id,obj,cb) {
     request
       .post(host+'user/'+id+'/post')

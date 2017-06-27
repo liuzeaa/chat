@@ -49,7 +49,24 @@ router.get('/detail',function (req,res) {
             res.send(json)
         })
 })
-/*router.get('/:id',(req,res)=>{
-    res.send('hello')
-})*/
+router.get('/:id',(req,res)=>{
+    model.Post.findById(req.params.id)
+        .then(post=>{
+            model.Comment.findAll({
+                where:{
+                    postId:req.params.id
+                }
+            }).then(comments=>{
+                model.Star.findAll({
+                    where:{
+                        postId:req.params.id
+                    }
+                }).then(stars=>{
+                    post.dataValues.comments = comments
+                    post.dataValues.stars = stars
+                    res.send(post)
+                })
+            })
+        })
+})
 module.exports = router

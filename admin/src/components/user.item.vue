@@ -91,7 +91,7 @@
   </div>
 </template>
 <script>
-  import {detail,addPost,editPost,deletePost,addFriend,deleteFriend} from './user.item.api';
+  import {detail,addPost,editPost,deletePost,addFriend,deleteFriend,queryUser} from './user.item.api';
   import {get_all_user} from './user.api';
   export default {
       name:'user-item',
@@ -192,8 +192,9 @@
           },
           handleAddFriend(){
             addFriend(this.id,this.addFriend.friendId,(item)=>{
-              debugger;
-              this.friend.push(item)
+              queryUser(this.addFriend.friendId,(i)=>{
+                this.friend.push(i)
+              })
             })
           },
           handleDeleteFriend(friendId){
