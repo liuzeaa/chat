@@ -128,7 +128,4 @@ router.delete('/:userId/friend/:friendId',(req,res)=>{
    })
 })
 
-
-
-
 module.exports = router

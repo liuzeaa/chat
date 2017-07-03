@@ -49,6 +49,36 @@ router.get('/detail',function (req,res) {
             res.send(json)
         })
 })
+router.post('/:id/comment',(req,res)=>{
+    console.log(req.body,'-----')
+    model.Comment.create({
+        postId:req.params.id,
+        content:req.body.content
+    }).then((item)=>{
+        res.send(item)
+    })
+})
+router.patch('/:postId/comment/:commentId',(req,res)=>{
+    model
+        .Comment.findById(req.params.commentId)
+        .then(comment=>{
+            comment.update(req.body)
+                .then((item)=>{
+                    res.send(item)
+                })
+        })
+})
+router.delete('/:postId/comment/:commentId',(req,res)=>{
+    model
+        .Comment.findById(req.params.commentId)
+        .then(comment=>{
+            comment.destroy()
+                .then((item)=>{
+                    res.send(item)
+                })
+        })
+
+})
 router.get('/:id',(req,res)=>{
     model.Post.findById(req.params.id)
         .then(post=>{

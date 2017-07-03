@@ -160,6 +160,7 @@
                 type: 'warning'
               }).then(() => {
                 deletePost(this.id,postId,(item)=>{
+
                   this.post = this.post.filter(obj=>{
                     return obj.id != item.id
                   })
