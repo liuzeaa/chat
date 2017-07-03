@@ -8,4 +8,4 @@ yarn-error.log*
 admin/node_modules/
 /npm-debug.log.2211088188
 /.idea/
-/chat/node_modules/
+chat/node_modules/
