@@ -1,27 +1,22 @@
-/**
- * Created by Administrator on 2017/7/2.
- */
-
-import Vuex from 'vuex'
 import vue from 'vue'
+import Vuex from 'vuex'
 
 vue.use(Vuex)
 
 import config from '../config'
+import {host} from '../config'
 
-var host ='http://localhost:3000/'
+var get_friend  = host+'user/'+config.id+'/friend'
 
-var get_friend =host + 'user/'+ config.id + '/friend'
+var get_post  =host +'user/'+config.id + '/post_detail'
 
-var get_post =host + 'user/'+ config.id + '/post_detail'
 import request from 'superagent'
-
 
 var store = new Vuex.Store({
   state:{
-    friends:[],
     posts:[],
-    self:[],
+    friends:[],
+    self:[]
   },
   getters:{
     friends:(state)=>state.friends,
@@ -29,8 +24,8 @@ var store = new Vuex.Store({
     self:(state)=>state.self
   },
   mutations:{
-    set_friends:(state,list)=>state.friends=list,
-    set_posts:(state,list)=>state.posts=list
+    set_friends:(state,list)=>state.friends = list,
+    set_posts:(state,list)=>state.posts= list
   },
   actions:{
     fetch_friends({commit}){
@@ -40,17 +35,13 @@ var store = new Vuex.Store({
           commit('set_friends',res.body)
         })
     },
-    fetch_post({commit}){
+    fetch_posts({commit}){
       request
         .get(get_post)
         .end((err,res)=>{
-          console.log(res.body)
           commit('set_posts',res.body)
         })
     }
   }
 })
-
 export default store
-
-

@@ -16,6 +16,7 @@
     "superagent": "^3.5.2",
     "vue": "^2.3.3",
     "vue-router": "^2.3.1",
+    "vue-validator": "^3.0.0-alpha.2",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2017/6/11.
- */
 var model = require('../../config/model')
 
 const USER = model.User
@@ -28,6 +25,11 @@ router.get('/:id',function (req, res) {
     USER.findById(req.params.id).then((list)=>{
         res.send(list)
     })
+    /*connect.query('SELECT * FROM username=?',{
+        model:model.User,replacements:[req.params.id]
+    }).then((list)=>{
+        res.send(list)
+    })*/
 })
 
 //返回该用户的所有数据
@@ -88,19 +90,19 @@ router.patch('/:userId/post/:postId',(req,res)=>{
         .Post.findById(req.params.postId)
         .then(post=>{
             post.update(req.body)
-            .then((item)=>{
-                res.send(item)
-            })
+                .then((item)=>{
+                    res.send(item)
+                })
         })
 })
 router.delete('/:userId/post/:postId',(req,res)=>{
     model
         .Post.findById(req.params.postId)
         .then(post=>{
-             post.destroy()
-            .then((item)=>{
-                res.send(item)
-            })
+            post.destroy()
+                .then((item)=>{
+                    res.send(item)
+                })
         })
 
 })
@@ -113,19 +115,19 @@ router.post('/:userId/friend/:friendId',(req,res)=>{
     })
 })
 router.delete('/:userId/friend/:friendId',(req,res)=>{
-   model.Relation.findOne({
-       where:{
-           $or:[
-               {userId:req.params.userId,friendId:req.params.friendId},
-               {friendId:req.params.userId,userId:req.params.friendId}
-           ]
-       }
-   }).then((friend)=>{
-       friend.destroy()
-           .then((item)=>{
-               res.send(item)
-           })
-   })
+    model.Relation.findOne({
+        where:{
+            $or:[
+                {userId:req.params.userId,friendId:req.params.friendId},
+                {friendId:req.params.userId,userId:req.params.friendId}
+            ]
+        }
+    }).then((friend)=>{
+        friend.destroy()
+            .then((item)=>{
+                res.send(item)
+            })
+    })
 })
 
 module.exports = router
